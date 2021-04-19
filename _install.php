@@ -24,7 +24,7 @@ if (version_compare($old_version, $new_version, '>=')) {
 try {
     // Default blog settings
     $core->blog->settings->addNamespace('flocoff');
-    $core->blog->settings->flocoff->put('enabled', false, 'boolean', 'Enabled', false, true);
+    $core->blog->settings->flocoff->put('enabled', true, 'boolean', 'Enabled', false, true);
 
     $core->setVersion('flocOff', $new_version);
 
