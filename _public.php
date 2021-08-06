@@ -26,6 +26,6 @@ class flocOffPublic
         if (!$core->blog->settings->flocoff->enabled) {
             return;
         }
-        $headers->append('permissions-policy: interest-cohort=()');
+        $headers->append('Permissions-Policy: interest-cohort=()');
     }
 }
