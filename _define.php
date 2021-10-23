@@ -23,10 +23,12 @@ $this->registerModule(
         'requires'    => [['core', '2.18']], // Dependencies
         'permissions' => 'admin',            // Permissions
         'type'        => 'plugin',           // Type
-        'details'     => 'https://open-time.net/?q=flocOff',       // Details URL
-        'support'     => 'https://github.com/franck-paul/flocOff', // Support URL
         'settings'    => [
             'blog' => '#params.flocoff'
-        ]
+        ],
+
+        'details'    => 'https://open-time.net/?q=flocOff',       // Details URL
+        'support'    => 'https://github.com/franck-paul/flocOff', // Support URL
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/flocOff/main/dcstore.xml'
     ]
 );
