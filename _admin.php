@@ -22,7 +22,7 @@ dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', ['flocOffBehaviors',
 
 class flocOffBehaviors
 {
-    public static function adminBlogPreferencesForm($core = null, $settings)
+    public static function adminBlogPreferencesForm($core, $settings)
     {
         $settings->addNameSpace('flocoff');
         echo

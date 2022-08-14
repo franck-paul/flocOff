@@ -18,7 +18,7 @@ $this->registerModule(
     'flocOff',                      // Name
     'Disable Google FLoC tracking', // Description
     'Franck Paul and contributors', // Author
-    '1.4',
+    '1.4.1',
     [
         'requires'    => [['core', '2.23']], // Dependencies
         'permissions' => 'admin',            // Permissions
