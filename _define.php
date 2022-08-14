@@ -18,17 +18,17 @@ $this->registerModule(
     'flocOff',                      // Name
     'Disable Google FLoC tracking', // Description
     'Franck Paul and contributors', // Author
-    '1.3',                          // Version
+    '1.4',
     [
-        'requires'    => [['core', '2.18']], // Dependencies
+        'requires'    => [['core', '2.23']], // Dependencies
         'permissions' => 'admin',            // Permissions
         'type'        => 'plugin',           // Type
         'settings'    => [
-            'blog' => '#params.flocoff'
+            'blog' => '#params.flocoff',
         ],
 
         'details'    => 'https://open-time.net/?q=flocOff',       // Details URL
         'support'    => 'https://github.com/franck-paul/flocOff', // Support URL
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/flocOff/master/dcstore.xml'
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/flocOff/master/dcstore.xml',
     ]
 );

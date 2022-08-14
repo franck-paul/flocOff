@@ -14,16 +14,14 @@ if (!defined('DC_RC_PATH')) {
     return;
 }
 
-$core->addBehavior('urlHandlerServeDocumentHeaders', ['flocOffPublic', 'urlHandlerServeDocumentHeaders']);
+dcCore::app()->addBehavior('urlHandlerServeDocumentHeaders', ['flocOffPublic', 'urlHandlerServeDocumentHeaders']);
 
 class flocOffPublic
 {
     public static function urlHandlerServeDocumentHeaders($headers)
     {
-        global $core;
-
-        $core->blog->settings->addNameSpace('flocoff');
-        if (!$core->blog->settings->flocoff->enabled) {
+        dcCore::app()->blog->settings->addNameSpace('flocoff');
+        if (!dcCore::app()->blog->settings->flocoff->enabled) {
             return;
         }
         $headers->append('Permissions-Policy: interest-cohort=()');

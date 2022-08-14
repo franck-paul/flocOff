@@ -14,8 +14,8 @@ if (!defined('DC_CONTEXT_ADMIN')) {
     return;
 }
 
-$new_version = $core->plugins->moduleInfo('flocOff', 'version');
-$old_version = $core->getVersion('flocOff');
+$new_version = dcCore::app()->plugins->moduleInfo('flocOff', 'version');
+$old_version = dcCore::app()->getVersion('flocOff');
 
 if (version_compare($old_version, $new_version, '>=')) {
     return;
@@ -23,14 +23,14 @@ if (version_compare($old_version, $new_version, '>=')) {
 
 try {
     // Default blog settings
-    $core->blog->settings->addNamespace('flocoff');
-    $core->blog->settings->flocoff->put('enabled', true, 'boolean', 'Enabled', false, true);
+    dcCore::app()->blog->settings->addNamespace('flocoff');
+    dcCore::app()->blog->settings->flocoff->put('enabled', true, 'boolean', 'Enabled', false, true);
 
-    $core->setVersion('flocOff', $new_version);
+    dcCore::app()->setVersion('flocOff', $new_version);
 
     return true;
 } catch (Exception $e) {
-    $core->error->add($e->getMessage());
+    dcCore::app()->error->add($e->getMessage());
 }
 
 return false;
