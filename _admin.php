@@ -17,12 +17,9 @@ if (!defined('DC_CONTEXT_ADMIN')) {
 // dead but useful code, in order to have translations
 __('flocOff') . __('Disable Google FLoC tracking');
 
-dcCore::app()->addBehavior('adminBlogPreferencesForm', ['flocOffBehaviors', 'adminBlogPreferencesForm']);
-dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', ['flocOffBehaviors', 'adminBeforeBlogSettingsUpdate']);
-
 class flocOffBehaviors
 {
-    public static function adminBlogPreferencesForm($core, $settings)
+    public static function adminBlogPreferencesForm($settings)
     {
         $settings->addNameSpace('flocoff');
         echo
@@ -39,3 +36,6 @@ class flocOffBehaviors
         $settings->flocoff->put('enabled', !empty($_POST['flocoff_enabled']), 'boolean');
     }
 }
+
+dcCore::app()->addBehavior('adminBlogPreferencesFormV2', [flocOffBehaviors::class, 'adminBlogPreferencesForm']);
+dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', [flocOffBehaviors::class, 'adminBeforeBlogSettingsUpdate']);

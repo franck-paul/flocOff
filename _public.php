@@ -14,8 +14,6 @@ if (!defined('DC_RC_PATH')) {
     return;
 }
 
-dcCore::app()->addBehavior('urlHandlerServeDocumentHeaders', ['flocOffPublic', 'urlHandlerServeDocumentHeaders']);
-
 class flocOffPublic
 {
     public static function urlHandlerServeDocumentHeaders($headers)
@@ -27,3 +25,5 @@ class flocOffPublic
         $headers->append('Permissions-Policy: interest-cohort=()');
     }
 }
+
+dcCore::app()->addBehavior('urlHandlerServeDocumentHeaders', [flocOffPublic::class, 'urlHandlerServeDocumentHeaders']);
