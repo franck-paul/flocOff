@@ -18,7 +18,7 @@ $this->registerModule(
     'flocOff',
     'Disable Google FLoC tracking',
     'Franck Paul and contributors',
-    '1.5',
+    '2.0',
     [
         'requires'    => [['core', '2.24']],
         'permissions' => dcCore::app()->auth->makePermissions([
