@@ -21,7 +21,6 @@ class flocOffBehaviors
 {
     public static function adminBlogPreferencesForm($settings)
     {
-        $settings->addNameSpace('flocoff');
         echo
         '<div class="fieldset"><h4 id="flocoff">' . __('Google FLoC tracking') . '</h4>' .
             '<p><label class="classic">' .
@@ -32,10 +31,11 @@ class flocOffBehaviors
 
     public static function adminBeforeBlogSettingsUpdate($settings)
     {
-        $settings->addNameSpace('flocoff');
         $settings->flocoff->put('enabled', !empty($_POST['flocoff_enabled']), 'boolean');
     }
 }
 
-dcCore::app()->addBehavior('adminBlogPreferencesFormV2', [flocOffBehaviors::class, 'adminBlogPreferencesForm']);
-dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', [flocOffBehaviors::class, 'adminBeforeBlogSettingsUpdate']);
+dcCore::app()->addBehaviors([
+    'adminBlogPreferencesFormV2'    => [flocOffBehaviors::class, 'adminBlogPreferencesForm'],
+    'adminBeforeBlogSettingsUpdate' => [flocOffBehaviors::class, 'adminBeforeBlogSettingsUpdate'],
+]);
