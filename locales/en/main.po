@@ -13,21 +13,17 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../git-plugins/flocOff/src/Backend.php:27
 msgid "Disable Google FLoC tracking"
 msgstr ""
 
-#: ../git-plugins/flocOff/src/Backend.php:27
 msgid "flocOff"
 msgstr ""
 
-#: ../git-plugins/flocOff/src/BackendBehaviors.php:30
 msgid "Google FLoC tracking"
 msgstr ""
 
-#: ../git-plugins/flocOff/src/BackendBehaviors.php:35
 msgid "Disable Google FLoC tracking for this blog (<a href=\"https://github.com/WICG/floc\" hreflang=\"en\">more information</a>)"
 msgstr ""

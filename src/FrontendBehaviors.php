@@ -10,15 +10,19 @@
  * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-class flocOffPublic
+declare(strict_types=1);
+
+namespace Dotclear\Plugin\flocOff;
+
+use dcCore;
+
+class FrontendBehaviors
 {
     public static function urlHandlerServeDocumentHeaders($headers)
     {
-        if (!dcCore::app()->blog->settings->flocoff->enabled) {
+        if (!dcCore::app()->blog->settings->get(My::id())->enabled) {
             return;
         }
         $headers->append('Permissions-Policy: interest-cohort=()');
     }
 }
-
-dcCore::app()->addBehavior('urlHandlerServeDocumentHeaders', [flocOffPublic::class, 'urlHandlerServeDocumentHeaders']);
