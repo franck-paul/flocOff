@@ -44,7 +44,7 @@ class Install extends Process
             }
 
             // Default blog settings
-            dcCore::app()->blog->settings->get(My::id())->put('enabled', true, dcNamespace::NS_BOOL, 'Enabled', false, true);
+            My::settings()->put('enabled', true, dcNamespace::NS_BOOL, 'Enabled', false, true);
         } catch (Exception $e) {
             dcCore::app()->error->add($e->getMessage());
         }

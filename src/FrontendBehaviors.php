@@ -14,15 +14,14 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\flocOff;
 
-use dcCore;
-
 class FrontendBehaviors
 {
     public static function urlHandlerServeDocumentHeaders($headers)
     {
-        if (!dcCore::app()->blog->settings->get(My::id())->enabled) {
+        if (!My::settings()?->enabled) {
             return;
         }
+
         $headers->append('Permissions-Policy: interest-cohort=()');
     }
 }
