@@ -18,7 +18,7 @@ class FrontendBehaviors
 {
     public static function urlHandlerServeDocumentHeaders($headers)
     {
-        if (!My::settings()?->enabled) {
+        if (!My::settings()->enabled) {
             return;
         }
 
