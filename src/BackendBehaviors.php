@@ -23,23 +23,27 @@ use Dotclear\Helper\Html\Form\Para;
 
 class BackendBehaviors
 {
-    public static function adminBlogPreferencesForm($settings)
+    public static function adminBlogPreferencesForm(): string
     {
         echo
         (new Fieldset('flocoff'))
         ->legend((new Legend(__('Google FLoC tracking'))))
         ->fields([
             (new Para())->items([
-                (new Checkbox('flocoff_enabled', $settings->get(My::id())->enabled))
+                (new Checkbox('flocoff_enabled', My::settings()->enabled))
                     ->value(1)
                     ->label((new Label(__('Disable Google FLoC tracking for this blog (<a href="https://github.com/WICG/floc" hreflang="en">more information</a>)'), Label::INSIDE_TEXT_AFTER))),
             ]),
         ])
         ->render();
+
+        return '';
     }
 
-    public static function adminBeforeBlogSettingsUpdate($settings)
+    public static function adminBeforeBlogSettingsUpdate(): string
     {
-        $settings->get(My::id())->put('enabled', !empty($_POST['flocoff_enabled']), dcNamespace::NS_BOOL);
+        My::settings()->get(My::id())->put('enabled', !empty($_POST['flocoff_enabled']), dcNamespace::NS_BOOL);
+
+        return '';
     }
 }

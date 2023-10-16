@@ -14,14 +14,23 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\flocOff;
 
+use ArrayObject;
+
 class FrontendBehaviors
 {
-    public static function urlHandlerServeDocumentHeaders($headers)
+    /**
+     * @param      ArrayObject<int, string>  $headers  The headers
+     *
+     * @return     string
+     */
+    public static function urlHandlerServeDocumentHeaders(ArrayObject $headers): string
     {
         if (!My::settings()->enabled) {
-            return;
+            return '';
         }
 
         $headers->append('Permissions-Policy: interest-cohort=()');
+
+        return '';
     }
 }
