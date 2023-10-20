@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\flocOff;
 
-use dcNamespace;
+use Dotclear\App;
 use Dotclear\Helper\Html\Form\Checkbox;
 use Dotclear\Helper\Html\Form\Fieldset;
 use Dotclear\Helper\Html\Form\Label;
@@ -42,7 +42,7 @@ class BackendBehaviors
 
     public static function adminBeforeBlogSettingsUpdate(): string
     {
-        My::settings()->get(My::id())->put('enabled', !empty($_POST['flocoff_enabled']), dcNamespace::NS_BOOL);
+        My::settings()->get(My::id())->put('enabled', !empty($_POST['flocoff_enabled']), App::blogWorkspace()::NS_BOOL);
 
         return '';
     }
