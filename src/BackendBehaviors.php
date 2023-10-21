@@ -42,7 +42,7 @@ class BackendBehaviors
 
     public static function adminBeforeBlogSettingsUpdate(): string
     {
-        My::settings()->get(My::id())->put('enabled', !empty($_POST['flocoff_enabled']), App::blogWorkspace()::NS_BOOL);
+        My::settings()->put('enabled', !empty($_POST['flocoff_enabled']), App::blogWorkspace()::NS_BOOL);
 
         return '';
     }
