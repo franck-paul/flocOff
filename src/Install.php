@@ -34,18 +34,16 @@ class Install extends Process
         try {
             // Update
             $old_version = App::version()->getVersion(My::id());
-            if (version_compare((string) $old_version, '3.0', '<')) {
-                // Rename settings namespace
-                if (App::blog()->settings()->exists('flocoff')) {
-                    App::blog()->settings()->delWorkspace(My::id());
-                    App::blog()->settings()->renWorkspace('flocoff', My::id());
-                }
+            // Rename settings namespace
+            if (version_compare((string) $old_version, '3.0', '<') && App::blog()->settings()->exists('flocoff')) {
+                App::blog()->settings()->delWorkspace(My::id());
+                App::blog()->settings()->renWorkspace('flocoff', My::id());
             }
 
             // Default blog settings
             My::settings()->put('enabled', true, App::blogWorkspace()::NS_BOOL, 'Enabled', false, true);
-        } catch (Exception $e) {
-            App::error()->add($e->getMessage());
+        } catch (Exception $exception) {
+            App::error()->add($exception->getMessage());
         }
 
         return true;
