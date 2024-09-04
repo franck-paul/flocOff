@@ -25,6 +25,6 @@ $this->registerModule(
 
         'details'    => 'https://open-time.net/?q=flocOff',
         'support'    => 'https://github.com/franck-paul/flocOff',
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/flocOff/master/dcstore.xml',
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/flocOff/main/dcstore.xml',
     ]
 );
