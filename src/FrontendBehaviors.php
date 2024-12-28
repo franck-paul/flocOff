@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief flocOff, a plugin for Dotclear 2
  *
@@ -20,8 +21,6 @@ class FrontendBehaviors
 {
     /**
      * @param      ArrayObject<int, string>  $headers  The headers
-     *
-     * @return     string
      */
     public static function urlHandlerServeDocumentHeaders(ArrayObject $headers): string
     {
