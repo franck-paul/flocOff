@@ -15,9 +15,9 @@ $this->registerModule(
     'flocOff',
     'Disable Google FLoC tracking',
     'Franck Paul and contributors',
-    '5.2',
+    '6.0',
     [
-        'date'        => '2003-08-13T13:42:00+0100',
+        'date'        => '2025-09-07T16:03:15+0200',
         'requires'    => [['core', '2.36']],
         'permissions' => 'My',
         'type'        => 'plugin',
