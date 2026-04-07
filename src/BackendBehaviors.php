@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief flocOff, a plugin for Dotclear 2
  *
@@ -30,7 +31,7 @@ class BackendBehaviors
         ->legend((new Legend(__('Google FLoC tracking'))))
         ->fields([
             (new Para())->items([
-                (new Checkbox('flocoff_enabled', My::settings()->enabled))
+                (new Checkbox('flocoff_enabled', (bool) My::settings()->enabled))
                     ->value(1)
                     ->label((new Label(__('Disable Google FLoC tracking for this blog (<a href="https://github.com/WICG/floc" hreflang="en">more information</a>)'), Label::INSIDE_TEXT_AFTER))),
             ]),
