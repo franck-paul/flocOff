@@ -20,15 +20,15 @@ use ArrayObject;
 class FrontendBehaviors
 {
     /**
-     * @param      ArrayObject<int, string>  $headers  The headers
+     * @param      ArrayObject<int, string>  $arrayObject  The headers
      */
-    public static function urlHandlerServeDocumentHeaders(ArrayObject $headers): string
+    public static function urlHandlerServeDocumentHeaders(ArrayObject $arrayObject): string
     {
         if (!My::settings()->getBool('enabled')) {
             return '';
         }
 
-        $headers->append('Permissions-Policy: interest-cohort=()');
+        $arrayObject->append('Permissions-Policy: interest-cohort=()');
 
         return '';
     }
