@@ -24,7 +24,7 @@ class FrontendBehaviors
      */
     public static function urlHandlerServeDocumentHeaders(ArrayObject $arrayObject): string
     {
-        if (!My::settings()->getBool('enabled')) {
+        if (!My::settings()->getBool('enabled', false)) {
             return '';
         }
 
